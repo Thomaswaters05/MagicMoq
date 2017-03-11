@@ -26,32 +26,36 @@ namespace MagicMoq.DAL
 
         public int OnePlusOne()
         {
-            throw new NotImplementedException();
+            return Wand.One() + Wand.One();
         }
 
         public int ZeroPlusZero()
         {
-            throw new NotImplementedException();
+            //OPTION ONE:
+           // return Wand.Two();
+
+            //OPTION TWO:
+            return Wand.One() + Wand.One();
         }
 
         public int FourPlusZero()
         {
-            throw new NotImplementedException();
+            return Wand.Four();
         }
 
         public int TwoMinusZero()
         {
-            throw new NotImplementedException();
+            return Wand.Two();
         }
 
         public int OnePlusTwo()
         {
-            throw new NotImplementedException();
+            return Wand.Three();
         }
 
         public int TwoPlusTwo()
         {
-            throw new NotImplementedException();
+            return Wand.Two() + Wand.Two();
         }
 
         public int OneMinusOne()
@@ -66,47 +70,65 @@ namespace MagicMoq.DAL
 
         public int FourMinusTwo()
         {
-            throw new NotImplementedException();
+            return Wand.Four() - Wand.Two();
         }
 
         public int FourMinusTwoPlusOne()
         {
-            throw new NotImplementedException();
+            return Wand.Four() - Wand.Two() + Wand.One();
         }
 
         public string SayNothing()
         {
-            throw new NotImplementedException();
+            return Wand.EmptyString();
         }
 
         public bool ReturnFalse()
         {
-            throw new NotImplementedException();
+            return Wand.False();
         }
 
         public bool ReturnTrue()
         {
-            throw new NotImplementedException();
+            return Wand.True();
         }
 
         public string SayHelloWorld()
         {
             return Wand.HelloWorld(); 
         }
-
+            
         public List<int> CountToFive()
         {
-            throw new NotImplementedException();
+            return Wand.ListOfNInts(1);
         }
 
         public List<int> FirstThreeEvenInts()
         {
-            throw new NotImplementedException();
+            List<int> numbers = Wand.ListOfNInts(6);
+            List <int> result = new List<int>();
+            foreach(var number in numbers)
+            {
+                if (number % 2 == 0)
+                {
+                    result.Add(number);
+                }
+            }
+            return result;
         }
 
         public List<int> FirstThreeOddInts()
         {
-            throw new NotImplementedException();
+            List<int> numbers = Wand.ListOfNInts(6);
+            List<int> result = new List<int>();
+            foreach (var number in numbers)
+            {
+                if (number % 2 != 0)
+                {
+                    result.Add(number);
+                }
+            }
+            return result;
         }
     }
 }
